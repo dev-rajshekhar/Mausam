@@ -96,7 +96,7 @@ fun Star(
         painter = painterResource(id = R.drawable.ic_star),
         contentDescription = null,
         modifier = modifier.size(20.dp),
-        tint = Color(0xFF6B4984).copy(alpha = alpha)
+        tint = Color(0xFFFFFFFF).copy(alpha = alpha)
     )
 }
 

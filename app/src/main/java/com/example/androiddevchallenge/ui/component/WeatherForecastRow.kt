@@ -55,8 +55,9 @@ fun WeatherForeCastRow(weatherForeCast: WeatherForeCast, index: Int, selection: 
         when (weatherForeCast.weatherType) {
             WeatherType.CLEAR.name -> {
                 Icon(
+                    tint = MaterialTheme.colors.onSurface,
                     modifier = Modifier.size(18.dp),
-                    painter = painterResource(id = R.drawable.ic_baseline_cloud_queue_24),
+                    painter = painterResource(id = R.drawable.ic_sun),
                     contentDescription = null
                 )
             }

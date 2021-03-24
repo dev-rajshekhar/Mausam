@@ -51,27 +51,27 @@ val FakeHourlyForecast = listOf<WeatherForeCast>(
     WeatherForeCast(
 
         weatherType = WeatherType.CLEAR.name,
-        temperature = "36",
+        temperature = "14",
         time = "07:00 am",
     ),
     WeatherForeCast(
 
         weatherType = WeatherType.CLOUDS.name,
-        temperature = "36",
+        temperature = "12",
         time = "08:00 am",
     ),
 
     WeatherForeCast(
 
         weatherType = WeatherType.RAIN.name,
-        temperature = "36",
+        temperature = "13",
         time = "09:00 am",
     ),
 
     WeatherForeCast(
 
         weatherType = WeatherType.CLOUDS.name,
-        temperature = "36",
+        temperature = "18",
         time = "11:00 am",
     ),
 
