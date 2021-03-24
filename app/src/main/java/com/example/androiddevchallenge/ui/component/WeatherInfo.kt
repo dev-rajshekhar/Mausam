@@ -42,7 +42,6 @@ import com.example.androiddevchallenge.data.WeatherForeCast
 
 @Composable
 fun WeatherInfo(weather: Weather, currentWeather: WeatherForeCast, selection: MutableState<Int>) {
-    println("==SELECTION" + selection.value)
 
     Column(
         modifier = Modifier
@@ -63,15 +62,19 @@ fun WeatherInfo(weather: Weather, currentWeather: WeatherForeCast, selection: Mu
             Column(
                 verticalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier
-                    .height(40.dp)
+                    .height(70.dp)
             ) {
                 Temperature(
-                    text = weather.minTemp,
+                    isSunInfo = true,
+                    text = weather.sunRise,
                     isDrawable = true,
                     painter = {
                         Icon(
-                            modifier = Modifier.size(18.dp),
-                            painter = painterResource(id = R.drawable.ic_down),
+                            tint = MaterialTheme.colors.onBackground,
+                            modifier = Modifier
+                                .size(28.dp)
+                                .padding(5.dp),
+                            painter = painterResource(id = R.drawable.ic_sunrise),
                             contentDescription = null
                         )
                     },
@@ -80,14 +83,17 @@ fun WeatherInfo(weather: Weather, currentWeather: WeatherForeCast, selection: Mu
                 )
                 Temperature(
                     isDrawable = true,
-
-                    text = weather.maxTemp,
+                    text = weather.sunSet,
+                    isSunInfo = true,
                     style = MaterialTheme.typography.h2,
                     color = MaterialTheme.colors.onBackground,
                     painter = {
                         Icon(
-                            modifier = Modifier.size(18.dp),
-                            painter = painterResource(id = R.drawable.ic_up),
+                            tint = MaterialTheme.colors.onBackground,
+                            modifier = Modifier
+                                .size(28.dp)
+                                .padding(5.dp),
+                            painter = painterResource(id = R.drawable.ic_sunset),
                             contentDescription = null
                         )
                     },
@@ -109,7 +115,26 @@ fun WeatherInfo(weather: Weather, currentWeather: WeatherForeCast, selection: Mu
             color = MaterialTheme.colors.onBackground,
             modifier = Modifier.padding(5.dp)
         )
+        Spacer(
+            modifier = Modifier
+
+                .padding(start = 10.dp, end = 10.dp)
+                .height(5.dp)
+        )
+        Text(
+            text = "Hourly Update",
+            style = MaterialTheme.typography.button,
+            color = MaterialTheme.colors.onBackground,
+            modifier = Modifier.padding(5.dp)
+        )
+        Spacer(
+            modifier = Modifier
+
+                .padding(start = 10.dp, end = 10.dp)
+                .height(5.dp)
+        )
         LazyRow(
+            modifier = Modifier.padding(start = 10.dp),
             content = {
                 items(FakeHourlyForecast.size) { index ->
                     WeatherForeCastRow(FakeHourlyForecast[index], index, selection)

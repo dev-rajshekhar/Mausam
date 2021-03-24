@@ -35,6 +35,7 @@ fun Temperature(
     text: String,
     modifier: Modifier = Modifier,
     isDrawable: Boolean = false,
+    isSunInfo: Boolean = false,
     painter: @Composable () -> Unit,
     color: Color = LocalContentColor.current,
     style: TextStyle = LocalTextStyle.current
@@ -46,16 +47,27 @@ fun Temperature(
         if (isDrawable) {
             painter()
         }
-        Text(
-            text = buildAnnotatedString {
-                append(text = text)
-                withStyle(SpanStyle(baselineShift = BaselineShift.None,)) {
-                    append("\u00B0")
-                }
-            },
-            color = color,
-            style = style,
-            modifier = modifier
-        )
+        if (isSunInfo) {
+            Text(
+                text = buildAnnotatedString {
+                    append(text = text)
+                },
+                color = color,
+                style = style,
+                modifier = modifier
+            )
+        } else {
+            Text(
+                text = buildAnnotatedString {
+                    append(text = text)
+                    withStyle(SpanStyle(baselineShift = BaselineShift.None)) {
+                        append("\u00B0")
+                    }
+                },
+                color = color,
+                style = style,
+                modifier = modifier
+            )
+        }
     }
 }

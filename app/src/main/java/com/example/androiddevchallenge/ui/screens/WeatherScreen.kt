@@ -57,18 +57,17 @@ import com.example.androiddevchallenge.ui.component.WeatherInfo
 @Composable
 fun WeatherScreen(weather: Weather, time: String) {
     val selection = remember { mutableStateOf(0) }
-    println("==SELECTION" + selection.value)
 
     val currentWeather: WeatherForeCast = weather.hourlyForeCast[selection.value]
     val backgroundImg = when (currentWeather.weatherType) {
         WeatherType.RAIN.name -> {
-            if (!MaterialTheme.colors.isLight) painterResource(id = R.drawable.rain) else painterResource(
+            if (MaterialTheme.colors.isLight) painterResource(id = R.drawable.rain) else painterResource(
                 id = R.drawable.rain
             )
         }
         WeatherType.SNOW.name -> {
             if (!MaterialTheme.colors.isLight) painterResource(id = R.drawable.snow) else painterResource(
-                id = R.drawable.night
+                id = R.drawable.snow
             )
         }
         WeatherType.CLOUDS.name -> {
@@ -77,7 +76,7 @@ fun WeatherScreen(weather: Weather, time: String) {
             )
         }
         WeatherType.CLEAR.name -> {
-            if (MaterialTheme.colors.isLight) painterResource(id = R.drawable.night) else painterResource(
+            if (MaterialTheme.colors.isLight) painterResource(id = R.drawable.sun) else painterResource(
                 id = R.drawable.night
             )
         }
@@ -128,14 +127,15 @@ fun WeatherScreen(weather: Weather, time: String) {
                                 modifier = Modifier.rotate(18f),
                                 width = maxWidth,
                                 height = maxHeight,
-                                drop = { SnowFall(modifier = Modifier.size(8.dp)) }
+                                drop = { SnowFall(modifier = Modifier.size(16.dp)) }
                             )
                         }
                         WeatherType.CLOUDS.name -> {
                         }
                         WeatherType.CLEAR.name -> {
 
-                            StarEffect(width = maxWidth, height = 200.dp)
+                            if (!MaterialTheme.colors.isLight)
+                                StarEffect(width = maxWidth, height = 200.dp)
                         }
                     }
                 }

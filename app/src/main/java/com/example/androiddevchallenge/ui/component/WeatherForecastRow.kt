@@ -62,6 +62,7 @@ fun WeatherForeCastRow(weatherForeCast: WeatherForeCast, index: Int, selection: 
             }
             WeatherType.SNOW.name -> {
                 Icon(
+                    tint = MaterialTheme.colors.onSurface,
                     modifier = Modifier.size(18.dp),
                     painter = painterResource(id = R.drawable.ic_snow),
                     contentDescription = null
@@ -69,6 +70,7 @@ fun WeatherForeCastRow(weatherForeCast: WeatherForeCast, index: Int, selection: 
             }
             WeatherType.CLOUDS.name -> {
                 Icon(
+                    tint = MaterialTheme.colors.onSurface,
                     modifier = Modifier.size(18.dp),
                     painter = painterResource(id = R.drawable.ic_baseline_cloud_queue_24),
                     contentDescription = null
@@ -76,8 +78,9 @@ fun WeatherForeCastRow(weatherForeCast: WeatherForeCast, index: Int, selection: 
             }
             WeatherType.RAIN.name -> {
                 Icon(
+                    tint = MaterialTheme.colors.onSurface,
                     modifier = Modifier.size(18.dp),
-                    painter = painterResource(id = R.drawable.ic_drop),
+                    painter = painterResource(id = R.drawable.ic_water),
                     contentDescription = null
                 )
             }

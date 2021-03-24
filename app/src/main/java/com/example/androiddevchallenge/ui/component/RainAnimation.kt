@@ -160,7 +160,7 @@ fun SnowFall(
         painter = painterResource(id = R.drawable.ic_snow),
         contentDescription = null,
         modifier = modifier.size(16.dp),
-        tint = Color(0xFFBEDCF0)
+        tint = Color(0xFFE8FAFF)
     )
 }
 

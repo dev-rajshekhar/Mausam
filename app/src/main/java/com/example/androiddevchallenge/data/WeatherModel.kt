@@ -44,8 +44,33 @@ enum class WeatherType {
 
 val FakeHourlyForecast = listOf<WeatherForeCast>(
     WeatherForeCast(
+        weatherType = WeatherType.CLEAR.name,
+        temperature = "16",
+        time = "06:00 am",
+    ),
+    WeatherForeCast(
 
         weatherType = WeatherType.CLEAR.name,
+        temperature = "36",
+        time = "07:00 am",
+    ),
+    WeatherForeCast(
+
+        weatherType = WeatherType.CLOUDS.name,
+        temperature = "36",
+        time = "08:00 am",
+    ),
+
+    WeatherForeCast(
+
+        weatherType = WeatherType.RAIN.name,
+        temperature = "36",
+        time = "09:00 am",
+    ),
+
+    WeatherForeCast(
+
+        weatherType = WeatherType.CLOUDS.name,
         temperature = "36",
         time = "11:00 am",
     ),
@@ -53,36 +78,36 @@ val FakeHourlyForecast = listOf<WeatherForeCast>(
     WeatherForeCast(
 
         weatherType = WeatherType.SNOW.name,
-        temperature = "36",
+        temperature = "12",
         time = "12:00 am",
     ),
     WeatherForeCast(
 
-        weatherType = WeatherType.CLEAR.name,
-        temperature = "36",
+        weatherType = WeatherType.SNOW.name,
+        temperature = "18",
         time = "01:00 pm",
     ),
     WeatherForeCast(
 
         weatherType = WeatherType.CLOUDS.name,
-        temperature = "36",
+        temperature = "22",
         time = "02:00 pm",
     ),
     WeatherForeCast(
 
-        weatherType = WeatherType.RAIN.name,
+        weatherType = WeatherType.CLEAR.name,
         temperature = "21",
         time = "3:00 pm",
     ),
     WeatherForeCast(
 
-        weatherType = WeatherType.RAIN.name,
+        weatherType = WeatherType.CLOUDS.name,
         temperature = "18",
         time = "4:00 pm",
     ),
     WeatherForeCast(
 
-        weatherType = WeatherType.RAIN.name,
+        weatherType = WeatherType.CLOUDS.name,
         temperature = "5",
         time = "5:00 pm",
     ),
@@ -93,91 +118,26 @@ val FakeHourlyForecast = listOf<WeatherForeCast>(
         time = "6:00 pm",
     ),
     WeatherForeCast(
-
         weatherType = WeatherType.SNOW.name,
         temperature = "25",
         time = "7:00 pm",
     ),
-)
-val FakerWeeklyWeather = listOf<Weather>(
-    Weather(
-        location = "Lucknow",
-        humidity = "",
-        maxTemp = "39",
-        minTemp = "24",
-        weatherType = WeatherType.CLEAR.name,
-        windSpeed = "20",
-        airQuality = "12",
-        sunRise = "5:06 am",
-        sunSet = "6:12 pm",
-        temperature = "36",
+    WeatherForeCast(
 
+        weatherType = WeatherType.RAIN.name,
+        temperature = "19",
+        time = "8:00 pm",
     ),
-    Weather(
-        location = "Lucknow",
-        humidity = "",
-        maxTemp = "39",
-        minTemp = "24",
-        weatherType = WeatherType.CLEAR.name,
-        windSpeed = "20",
-        airQuality = "12",
-        sunRise = "5:06 am",
-        sunSet = "6:12 pm",
-        temperature = "36",
-
+    WeatherForeCast(
+        weatherType = WeatherType.CLOUDS.name,
+        temperature = "12",
+        time = "8:00 pm",
     ),
-    Weather(
-        location = "Lucknow",
-        humidity = "15.6",
-        maxTemp = "39",
-        minTemp = "24",
+    WeatherForeCast(
         weatherType = WeatherType.CLEAR.name,
-        windSpeed = "20",
-        airQuality = "12",
-        sunRise = "5:06 am",
-        sunSet = "6:12 pm",
-        temperature = "36",
-
+        temperature = "12",
+        time = "9:00 pm",
     ),
-    Weather(
-        location = "Lucknow",
-        humidity = "",
-        maxTemp = "39",
-        minTemp = "24",
-        weatherType = WeatherType.CLEAR.name,
-        windSpeed = "20",
-        airQuality = "12",
-        sunRise = "5:06 am",
-        sunSet = "6:12 pm",
-        temperature = "36",
-
-    ),
-    Weather(
-        location = "Lucknow",
-        humidity = "",
-        maxTemp = "39",
-        minTemp = "24",
-        weatherType = WeatherType.CLEAR.name,
-        windSpeed = "20",
-        airQuality = "12",
-        sunRise = "5:06 am",
-        sunSet = "6:12 pm",
-        temperature = "36",
-
-    ),
-    Weather(
-        location = "Lucknow",
-        humidity = "",
-        maxTemp = "39",
-        minTemp = "24",
-        weatherType = WeatherType.CLEAR.name,
-        windSpeed = "20",
-        airQuality = "12",
-        sunRise = "5:06 am",
-        sunSet = "6:12 pm",
-        temperature = "36",
-
-    )
 )
 
 val FakeWeatherData = Weather(
